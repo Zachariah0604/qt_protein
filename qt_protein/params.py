@@ -1,0 +1,1 @@
+dict_lightgbm={1:'num_iterations',2:'learning_rate',3:'num_leaves',4:'max_depth',5:'min_data_in_leaf',6:'min_hessian',7:'feature_fraction',8:'early_stopping_round',9:'lambda_l1',10:'lambda_l2',11:'max_bin',12:'scale_pos_weight'}

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>679</width>
+    <height>526</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+    <pointsize>11</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QLineEdit,QPlainTextEdit,QSpinBox,QDoubleSpinBox{
+
+border:1px solid  #C0DCF2;
+padding:2px;
+background:none;
+selection-background-color:#EEEEEE;
+selection-color:#000000;
+}
+
+QLineEdit[echoMode=&quot;2&quot;]{
+lineedit-password-character:9679;
+}
+
+QPushButton
+{
+    color: rgb(255, 255, 255);
+    background-color: rgb(85, 170, 255);
+    border:none;
+    padding: 3px;
+    font-family: &quot;微软雅黑&quot;;
+    font-size: 12px;
+    text-align: center;
+}
+QComboBox,QDateEdit,QSpinBox,QDoubleSpinBox{
+border-radius:3px;
+padding:3px 5px 3px 5px;
+border:1px solid #C0DCF2;
+}
+
+QComboBox::drop-down,QDateEdit::drop-down{
+subcontrol-origin:padding;
+subcontrol-position:top right;
+width:15px;
+border-left-width:1px;
+border-left-style:solid;
+border-top-right-radius:3px;
+border-bottom-right-radius:3px;
+border-left-color:#C0DCF2;
+}
+
+QComboBox::down-arrow,QDateEdit::down-arrow{
+image:url(:/image/array_down.png);
+}
+.QGroupBox{
+border:1px solid #C0DCF2;
+border-radius:5px;
+font-family: &quot;微软雅黑&quot;;
+}
+
+QRadioButton{
+color:#386487;
+spacing:2px;
+}
+
+QRadioButton::indicator{
+width:15px;
+height:15px;
+}
+
+QRadioButton::indicator::unchecked{
+image:url(&quot;D:/Documents/PyQt5/qt_protein/qt_protein/ui/images/radio_normal.png&quot;);
+}
+
+QRadioButton::indicator::checked{
+image:url(&quot;D:/Documents/PyQt5/qt_protein/qt_protein/ui/images/radio_selected.png&quot;);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>18</x>
+      <y>22</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>源文件</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="file_path">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>20</y>
+      <width>371</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="open_file_button">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>19</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>浏览</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>631</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>特征提取方式</string>
+    </property>
+    <widget class="QRadioButton" name="radioButton35">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>171</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>只提取传统特征（35）</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton220">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>231</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>只提取embeding特征（220）</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton43">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>104</y>
+       <width>231</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>只使用传统特征表示方法（43）</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton195">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>135</y>
+       <width>461</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>（碎裂窗口+C/N端身份）使用embeding和35个传统特征（195）</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton255">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>611</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>（肽，b，y中AA个数+碎裂窗口+C/N端身份）使用embeding和35个传统特征（255）</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>300</y>
+      <width>631</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>归一化处理</string>
+    </property>
+    <widget class="QRadioButton" name="radioButtonn0">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>141</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>不进行归一化</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButtonn1">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>41</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>最大最小值归一化</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButtonn2">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>43</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>方差均值归一化</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>402</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>输出目录</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="output_path">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>400</y>
+      <width>351</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="output_dir_btn">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>399</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>浏览</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="feature_btn">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>457</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>提取</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>679</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
